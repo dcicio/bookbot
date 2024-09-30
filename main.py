@@ -17,6 +17,17 @@ def main():
     word_count = get_num_words(file_contents)
 
     print(f"{word_count} words found in the document")
+
+    # For each character, we check if it's a letter
+    # If it is, we make sure it's lowercase
+    # Then we increment the value for the dictionary key of the letter
+    for character in file_contents:
+        if (character.isalpha()):
+            character = character.lower()
+            letter_count[character] += 1
+    
+    print(letter_count)
+
     
 # Open and read the file into a variable
 def get_book_text(path):
