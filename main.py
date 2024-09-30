@@ -4,10 +4,9 @@ def main():
     
     file_contents = get_book_text(path_to_file)
     word_count = get_num_words(file_contents)
-    final_counts = get_letter_count(file_contents)
+    final_count = get_letter_count(file_contents)
 
-    print(f"{word_count} words found in the document")
-    print(final_counts)
+    print_report(final_count, word_count, path_to_file)
 
     
 # Open and read the file into a variable
@@ -40,5 +39,21 @@ def get_letter_count(text):
         if (character.isalpha()):
             character = character.lower()
             letter_count[character] += 1
-    return letter_count
+    
+    # Sorting the dictionary by key, in descending order
+    sorted_letter_count = dict(sorted(letter_count.items(), key=lambda x:x[1], reverse=True))
+    return sorted_letter_count
+
+def print_report(counts, word_count, filepath):
+    print(f"-- Begin report on {filepath} --")
+    print()
+    print(f"{word_count} words found in the document")
+    print()
+
+    for count in counts:
+        print(f"The letter {count} appears {counts[count]} times")
+    
+    print()
+    print("Thank you for using BookBot!")
+
 main()
