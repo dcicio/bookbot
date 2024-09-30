@@ -1,4 +1,14 @@
 def main():
+    # This dictionary will hold the counts for each letter
+    letter_count = {}
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+    # This takes goes through the alphabet letter by letter
+    ## For each letter, it creates a key in the dictionary
+    ## The value of each key is initialized to 0
+    for character in alphabet:
+        letter_count[character] = 0
+    
     # Relative filepath of the text of Frankstein, presuming running from ~/workspace/github.com/dcicio/bookbot
     path_to_file = "books/frankenstein.txt"
     
