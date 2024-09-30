@@ -54,6 +54,6 @@ def print_report(counts, word_count, filepath):
         print(f"The letter {count} appears {counts[count]} times")
     
     print()
-    print("Thank you for using BookBot!")
+    print("-- Thank you for using BookBot! --")
 
 main()
